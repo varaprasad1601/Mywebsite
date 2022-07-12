@@ -1,0 +1,260 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    ::selection{
+            background-color: gainsboro;
+        }
+    .body{
+        padding: 0px;
+        margin: 0px;
+        height: 100%;
+    }
+    .container{
+        margin-top: 20px !important;
+        margin: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .left-box,.right-box{
+        margin: 0px;
+        background-color: white;
+        border-radius: 5px;
+        width: 20%;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        padding-top: 30px;
+        border: 1px solid rgba(128, 128, 128, 0.144);
+    }
+    .middle-box{
+        width:50%;
+        border-radius: 5px;
+        background-color: white;
+        display: flex;
+        border: 1px solid rgba(128, 128, 128, 0.144);
+    }
+    .search{
+        padding: 8.5px;
+        border-radius: 25px;
+        background-color: whitesmoke;
+        border: none;
+        outline: 1px solid gray;
+        width: 100%;
+        padding-left: 13px;
+        padding-right: 75px;
+        color: gray;
+    }
+    .search_btn{
+        padding: 8px 0px;
+        border-radius: 0px 25px 25px 0px;
+        border: none;
+        width: 25%;
+        font-size: 15px;
+        background-color: rgba(190, 190, 190, 0.356);
+        color: gray;
+        position: relative;
+        top: -33px;
+        right: -75.5%;
+    }
+    .search_btn:hover{
+        background-color: gray;
+        color: white;
+    }
+    .left_inside_box{
+        list-style: none;
+        overflow-y: scroll;
+        height: 335px;
+        background-color: whitesmoke;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    .right_inside_box{
+        list-style: none;
+        overflow-y: scroll;
+        height: 370px;
+        background-color: whitesmoke;
+        margin-bottom: 20px;
+        margin-top: -5px;
+    }
+    ul::-webkit-scrollbar{
+        background-color: whitesmoke;
+        width: 3px;
+        animation: lists 10s infinite;
+    }
+    ul::-webkit-scrollbar-thumb{
+        background-color: gainsboro;
+        border-radius: 10px;
+    }
+    ul li{
+        margin: 10px;
+        margin-left: -30px;
+        padding: 10px 2px;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.479);
+        font-size: 15px;
+    }
+    .right-box{
+        padding-bottom: 0px !important;
+    }
+    .notify{
+        margin-top: -15px;
+        font-weight: lighter !important;
+    }
+    .image{
+        height: 100% !important;
+    }
+    .carousel{
+        background-size: cover;
+        margin: 15px 40px 0px 40px;
+        width: 100%;
+        text-align: center;
+        overflow-x:hidden;
+    }
+    .carousel_images{
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        width: 100%;
+        transition: left 0.7s ease;
+    }
+
+
+    .carousel_buttons{
+       position: relative;
+       bottom: 30px;
+       width: 100%;
+       margin-bottom: 0px;
+       user-select: none;
+    }
+    .btn{
+        display: inline-block;
+        height: 4px;
+        width: 20px;
+        border: 1px solid white;
+        cursor: pointer;
+    }
+    input[type="radio"]{
+        position: absolute;
+    }
+    .radio{
+        position: absolute;
+    }
+
+
+    #btn_1:checked ~ .carousel_images{
+        left: 0%;
+    }
+    #btn_2:checked ~ .carousel_images{
+        left: -100%;
+    }
+    #btn_3:checked ~ .carousel_images{
+        left: -200%;
+    }
+    
+    
+    #btn_1:checked ~ .carousel_buttons > .btn1{
+        background-color: white;
+    }
+    #btn_2:checked ~ .carousel_buttons > .btn2{
+        background-color: white;
+    }
+    #btn_3:checked ~ .carousel_buttons > .btn3{
+        background-color: white;
+    }
+    
+</style>
+<body>
+    <div class="container">
+        <div class="left-box">
+            <input type="text" class="search" id="filter" onkeyup="search()">
+            <input type="button" class="search_btn" value="Search" onclick="search()">
+            <ul class="left_inside_box">
+                <li class="li">Sai</li>
+                <li class="li">Siva</li>
+                <li class="li">Sankara</li>
+                <li class="li">Vara</li>
+                <li class="li">Prasad</li>
+                <li class="li">Chinnu</li>
+                <li class="li">Jairam</li>
+                <li class="li">Janardhan</li>
+                <li class="li">Baji</li>
+                <li class="li">Kalyan</li>
+                <li class="li">Karthik</li>
+                <li class="li">Mahesh</li>
+                <li class="li">gigelu</li>
+            </ul>
+        </div>
+        <div class="middle-box">
+            <div class="carousel">
+                <input type="radio" class="radio" name="common" id="btn_1" checked>
+                <input type="radio" class="radio" name="common" id="btn_2">
+                <input type="radio" class="radio" name="common" id="btn_3">
+                <div class="carousel_images">
+                    <img src="1.png" width="100%" class="image">
+                    <img src="2.png" width="100%" class="image">
+                    <img src="3.png" width="100%" class="image">
+                    <img src="1.png" width="100%" class="image">
+                </div>
+                <div class="carousel_buttons">
+                    <label class="btn btn1" for="btn_1"></label>
+                    <label class="btn btn2" for="btn_2"></label>
+                    <label class="btn btn3" for="btn_3"></label>
+                </div>
+            </div>
+        </div>
+        <div class="right-box">
+            <center><h2 class="notify">Notifications</h2></center>
+            <ul class="right_inside_box">
+                <li>Sai</li>
+                <li>Siva</li>
+                <li>Sankara</li>
+                <li>Vara</li>
+                <li>Prasad</li>
+                <li>Chinnu</li>
+                <li>Jairam</li>
+                <li>Janardhan</li>
+                <li>Baji</li>
+                <li>Kalyan</li>
+                <li>Karthik</li>
+                <li>Mahesh</li>
+                <li>gigelu</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var num=1;
+        setInterval(function(){
+            document.getElementById("btn_" + num).checked=true;
+            num=num+1;
+            if (num > 3){
+                num=1;   
+            }
+        },3000)
+        
+        function search(){
+            var text=document.getElementById("filter").value.toLowerCase();
+            var items=document.getElementsByClassName("li");
+            Array.from(items).forEach((item)=>{
+                itemvalue=item.firstChild.textContent;
+                if(itemvalue.toLowerCase().indexOf(text)!=-1){
+                    item.style.display="block";
+                }
+                else{
+                    item.style.display="none";
+                }
+            });
+            // alert(text)
+        }
+    </script>
+</body>
+</html>

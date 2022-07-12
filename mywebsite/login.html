@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            justify-content: center;
+            background-color: whitesmoke;
+        }
+        :active{
+            color: blue;
+        }
+        .container{
+            margin-top: 50px;
+            background-color: white;
+            border: 1px solid rgba(128, 128, 128, 0.144);
+            border-radius: 5px;
+            width: 35%;
+            height: 300px;
+            padding: 15px;
+        }
+        .box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="text"], input[type="password"]{
+            border: none;
+            outline: 1px solid rgba(128, 128, 128, 0.479);
+            background-color: whitesmoke;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-bottom: 20px;
+            color: gray;
+            width: 100%;
+        }
+        input[type="submit"]{
+            border: none;
+            margin-top: 15px;
+            background-color: black;
+            outline: 1px solid black;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-bottom: 20px;
+            color: white;
+            width: 50%;
+        }
+        input[type="submit"]:hover{
+            /* background-color: rgb(54, 54, 54); */
+            box-shadow: 0px 0px 10px rgb(88, 88, 88);
+        }
+        .form-control{
+            width: 50%;
+        }
+        label{
+            
+            margin-bottom: 4px;
+            color: black;
+            display: inline;
+            display: block;
+            font-size: 14;
+            text-align: left !important;
+        }
+
+        h1{
+            margin-top:5px;
+        }
+        .show_pass{
+            position: relative;
+            left: 0;
+            width: 50%;
+            margin-top: -14px !important;
+            display: flex;
+
+        }
+        .show{
+            margin-top: 5px;
+            margin-left: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>Login</h1>
+            <div class="form-control">
+                <label>User Name</label>
+                <input type="text">
+            </div>
+            <div class="form-control">
+                <label>Password</label>
+                <input type="password" id="password">
+            </div>
+            <div class="show_pass">
+                <input type="checkbox" onclick="show()" id="checkbox">
+                <label class="show">Show Password</label>
+            </div>
+            <input type="submit" value="Login">
+            <div class="log_link" style="font-size: 14;text-align: center;margin-top: -5px;">
+                Don't have an account? <a href="registration_form.html" target="body" style="text-decoration:none;"> Register</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function show(){
+            var s=document.getElementById("checkbox").checked;
+            if (s){
+                document.getElementById("password").type="text";
+            }else{
+                document.getElementById("password").type="password";
+            }
+        }
+    </script>
+</body>
+</html>

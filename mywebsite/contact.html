@@ -1,0 +1,110 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            background-color: whitesmoke;
+            display: flex;
+            justify-content: center;
+        }
+        .container{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 50px;
+        }
+        .left_box{
+            margin-top: 0px;
+            background-color: white;
+            border: 1px solid rgba(128, 128, 128, 0.144);
+            border-radius: 5px;
+            width: 30%;
+            height: max-content;
+            padding: 30px;
+        }
+        .right_box{
+            width: 60%;
+            height:479px;
+            margin-top: 0px;
+            background-color: white;
+            border: 1px solid rgba(128, 128, 128, 0.144);
+            border-radius: 5px;
+            padding: 20px;
+        }
+        label{
+            
+            margin-bottom: 4px;
+            color: black;
+            display: inline;
+            display: block;
+            font-size: 14;
+            text-align: left !important;
+        }
+        input[type="text"],textarea{
+            border: none;
+            outline: 1px solid rgba(128, 128, 128, 0.479);
+            background-color: whitesmoke;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-bottom: 20px;
+            color: gray;
+            width: 100%;
+        }
+        input[type="submit"]{
+            border: none;
+            margin-top: 15px;
+            background-color: black;
+            outline: 1px solid black;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-bottom: 20px;
+            color: white;
+            width: 100%;
+        }
+        input[type="submit"]:hover{
+            /* background-color: rgb(54, 54, 54); */
+            box-shadow: 0px 0px 10px rgb(88, 88, 88);
+        }
+        iframe{
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left_box">
+            <h1 style="text-align:center; margin-top: 0px;">Feedback</h1>
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Subject</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                <textarea rows="5"></textarea>
+            </div>
+            <input type="submit" value="Submit">
+        </div>
+        <div class="right_box">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6634.7005758705745!2d80.82005117268685!3d16.792703575097455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3675e5f312c661%3A0xab7189f421622491!2sIIIT%20Nuzvid%20Campus%2C%20Nuzividu%2C%20Andhra%20Pradesh%20521202!5e1!3m2!1sen!2sin!4v1657564355771!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</body>
+</html>
